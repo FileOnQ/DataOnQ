@@ -8,10 +8,10 @@ public class MainViewModel
 {
     public MainViewModel()
     {
-        Items = new ObservableCollection<object>();
+        Items = new ObservableCollection<ToDoItem>();
     }
 
-    public ObservableCollection<object> Items { get; }
+    public ObservableCollection<ToDoItem> Items { get; }
 }
 ```
 
@@ -20,7 +20,7 @@ Now to populate the `Items` collection we are going to use Dependency Injection 
 ```c#
 public interface IToDoService
 {
-    IEnumerable<object> GetItems();
+    IEnumerable<ToDoItem> GetItems();
 }
 ```
 
@@ -32,10 +32,10 @@ public class MainViewModel
     public MainViewModel(IToDoService todoService)
     {
         todoItems = todoService.GetItems();
-        Items = new ObservableCollection<object>(todoItems);
+        Items = new ObservableCollection<ToDoItem>(todoItems);
     }
 
-    public ObservableCollection<object> Items { get; }
+    public ObservableCollection<ToDoItem> Items { get; }
 }
 ```
 
