@@ -12,6 +12,8 @@ DataOnQ is a new and exciting way to handle offline data capabilities in .NET pr
 | Start Development                   | 🗺 Planned         |
 | Initial Release                     | 🗺 Planned         |
 
+
+
 # Specification
 The development team at FileOnQ built this library originally for a Xamarin.Forms application that had limited to no intranet or internet connectivity except when connected via ethernet dock while using specialized devices. 
 
