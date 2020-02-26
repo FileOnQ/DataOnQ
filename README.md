@@ -17,8 +17,8 @@ The development team at FileOnQ built this library originally for a Xamarin.Form
 
 * [Current Specification](SPECIFICATION.md)
 
-# Problem Space
-If you want to learn more about our specific Problem Space and how this project got started, take a look at our [Problem Space](PROBLEM_SPACE.md) documentation.
+# About
+DataOnQ was originally an internal library built at FileOnQ for handling offline synchronization in environments where internet connection is only available 1% - 5% of the time. To learn more, check out the useful links below
 
 * [Problem Space](PROBLEM_SPACE.md)
-
+* [Vision](VISION.md)
