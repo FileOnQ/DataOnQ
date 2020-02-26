@@ -1,6 +1,9 @@
 # DataOnQ - Specification
 The DataOnQ Specification is built off of a real-world internal library that [Andrew Hoefling (@ahoefling)](https://github.com/ahoefling) built for FileOnQ on a Xamarin.Forms project. If you are interested in why this library was built or some of the background leading up to the project, check out the [Problem Space](PROBLEM_SPACE.md) and our [Vision](VISION.md).
 
+If you want to get started as quickly as possible checkout the [Quick Start](QUICK_START.md) Guide.
+* [Quick Start](QUICK_START.md)
+
 # Middleware
 DataOnQ is built using a Middleware Architecture ([Chain of Responsibility](https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern)) which is very similar to the ASP.NET Core Middleware that many .NET Core developers are using today. At the most basic level, DataOnQ provides a middleware for application developers to program exactly how their Data Access works with a [Binary Tree](https://en.wikipedia.org/wiki/Binary_tree).
 
@@ -51,7 +54,7 @@ The ToDo App uses a `IToDoService` which defines an API for retrieving all the i
 ```c#
 public interface IToDoService
 {
-    IEnumerable<ToDoItem> GetItems();
+    Task<IEnumerable<ToDoItem>> GetItems();
 }
 ```
 
@@ -71,16 +74,16 @@ public abstract ServiceWrapper<TContract>
 [Middleware(typeof(OfflineAvailableMiddleware)]
 public class ToDoService : ServiceWrapper<IToDoService>, IToDoService
 {
-    public IEnumerable<ToDoItem> GetItems()
+    public Task<IEnumerable<ToDoItem>> GetItems()
     {
-        return Proxy<IEnumerable<ToDoItem>>(x => x.GetItems());
+        return Proxy<Task<IEnumerable<ToDoItem>>>(x => x.GetItems());
     }
 }
 ```
 
 To properly invoke the Middleware your service implementation places the correct Lambda Expression as the parameter to the Proxy. This will be invoked by DataOnQ during the Middleware execution
 ```c#
-Proxy<IEnumerable<ToDoItem>>(x => x.GetItems());
+Proxy<Task<IEnumerable<ToDoItem>>>(x => x.GetItems());
 ```
 
 ## Middleware Attribute
@@ -254,7 +257,7 @@ Add the following code to your App Start Sequence, typically in the `App.xaml.cs
 DataOnQ
     .RegisterHandler<HttpServiceHandler>()
     .From<IToDoService>()
-    .To<HttpDoDoHandler>();
+    .To<HttpToDoHandler>();
 ```
 
 ## Write Local Database
@@ -301,7 +304,7 @@ public class WriteToDoHandler : IToDoService, IAttachProxy
         PreviousResponse = proxy.PreviousResponse;
     }
 
-    public object GetItems()
+    public async Task<IEnumerable<ToDoItem>> GetItems()
     {
         if (PreviousResponse == null)
             throw new InvalidOperationException("Unable to write to local database, there is no PreviousResult");
