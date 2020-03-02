@@ -7,7 +7,7 @@ This specification is a living document and is subject to change. Below is a tab
 | Milestone                                                          | Status             |
 |--------------------------------------------------------------------|--------------------|
 | [Core Specification](SPECIFICATION_CORE.md)                        | ✔ Done             |
-| [Pre-Built Middleware Specification](SPECIFICATION_MIDDLEWARE.md)  | 🔃 In-Progress     |
+| [Pre-Built Middleware Specification](SPECIFICATION_MIDDLEWARE.md)  | ✔ Done     |
 | [Plugin Specification](SPECIFICATION_PLUGIN.md)                                           | 🗺 Planned         |
 
 ## Core Library (Advanced)
