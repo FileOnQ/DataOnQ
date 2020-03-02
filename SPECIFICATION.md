@@ -22,7 +22,7 @@ The core library includes everything in DataOnQ:
 * DataOnQ Startup Logic
 
 ## Pre-Built Middleware (Intermediate)
-The DataOnQ Handler libraries is an easy way to get started with DataOnQ and is described in the [DataOnQ Handlers]() file. A handler implementation utilizes a pre-built DataOnQ Middleware, where the development team will need to implement several different handlers.
+The DataOnQ Handler libraries is an easy way to get started with DataOnQ and is described in the [DataOnQ Middleware](SPECIFICATION_MIDDLEWARE.md) file. A handler implementation utilizes a pre-built DataOnQ Middleware, where the development team will need to implement several different handlers.
 
 * [DataOnQ Middleware](SPECIFICATION_MIDDLEWARE.md)
 
