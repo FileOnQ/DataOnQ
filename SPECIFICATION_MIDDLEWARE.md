@@ -1,5 +1,5 @@
-# DataOnQ - Quick Start
-DataOnQ is a complex offline synchroinzation library, but if you want to get started as quickly as possible you are in the right place! The quick start guide doesn't go into any detail on the Middleware, please take a look at the [Specification](SPECIFICATION.md) for more details.
+# Middleware Specification
+The Middleware Specification is designed to be used by intermediate users of DataOnQ. This is for developers that want to leverage the one of DataOnQ's pre-built Middleware's where the application defines only the required Service Handlers of the Middleware.
 
 ## Middleware
 Use the `HttpOfflineAvailableMiddleware` to implement an offline available service layer. The Middleware implements the following Binary Tree
