@@ -24,7 +24,7 @@ The core library includes everything in DataOnQ:
 ## Pre-Built Middleware (Intermediate)
 The DataOnQ Handler libraries is an easy way to get started with DataOnQ and is described in the [DataOnQ Handlers]() file. A handler implementation utilizes a pre-built DataOnQ Middleware, where the development team will need to implement several different handlers.
 
-* [DataOnQ Handlers]()
+* [DataOnQ Middleware](SPECIFICATION_MIDDLEWARE.md)
 
 A DataOnQ Handler Implementation provides a balance mix of ease of use and customization for your offline workflows. 
 * Service Handler Implementations
