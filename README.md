@@ -7,7 +7,7 @@ DataOnQ is a new and exciting way to handle offline data capabilities in .NET pr
 |-------------------------------------|--------------------|
 | Internal Library                    | ✔ Done             |
 | Code Migration                      | 🔃 In-Progress     |
-| Public Specification                | 🔃 In-Progress     |
+| Public Specification                | ✔ Done     |
 | Define Minimal Viable Product (MVP) | 🗺 Planned         |
 | Start Development                   | 🗺 Planned         |
 | Initial Release                     | 🗺 Planned         |
